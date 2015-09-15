@@ -1554,9 +1554,9 @@ exports.Splat = class Splat extends Base
 
   isAssignable: YES
 
-  constructor: (name, options) ->
+  constructor: (name, options = {}) ->
     @name = if name.compile then name else new Literal name
-    @existential = options?.existential
+    @existential = options.existential
 
   assigns: (name) ->
     @name.assigns name
