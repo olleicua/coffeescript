@@ -407,6 +407,14 @@ test "splats and the `new` operator: functions that return functions should cons
   ok child not instanceof constructor
   eq fn, child
 
+test "existential splat should work", ->
+  foo = null
+  arrayEq [1..3], id 1, 2, 3, foo?...
+  foo = undefined
+  arrayEq [1..3], id 1, 2, 3, foo?...
+  foo = [4, 5]
+  arrayEq [1..5], id 1, 2, 3, foo?...
+
 test "implicit return", ->
 
   eq ok, new ->

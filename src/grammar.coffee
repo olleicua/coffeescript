@@ -251,6 +251,7 @@ grammar =
 
   # A splat that occurs outside of a parameter list.
   Splat: [
+    o 'Expression ?...',                        -> new Splat $1, existential: yes
     o 'Expression ...',                         -> new Splat $1
   ]
 

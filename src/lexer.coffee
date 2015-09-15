@@ -810,7 +810,7 @@ OPERATOR   = /// ^ (
    | >>>=?             # zero-fill right shift
    | ([-+:])\1         # doubles
    | ([&|<>*/%])\2=?   # logic / shift / power / floor division / modulo
-   | \?(\.|::)         # soak access
+   | \?(\.{1,3}|::)    # soak access
    | \.{2,3}           # range or splat
 ) ///
 
